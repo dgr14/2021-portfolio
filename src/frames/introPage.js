@@ -1,21 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const introContainer = styled.div`
+const IntroContainer = styled.div`
     height: 100vh;
-
-`
-
-const nameText = styled.h2`
+    width: 100%;
 
 `
 
 const introPage = () => {
     return(
-        <introContainer>
-            <nameText>Darius Raazi</nameText>
-        </introContainer>
+        <IntroContainer>
+            
+        </IntroContainer>
     )
 }
 
-export default introPage
+export default introPage;
