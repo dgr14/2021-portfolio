@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 // component imports
-import introPage from './frames/introPage'
+import IntroPage from './frames/IntroPage'
+import Toolbar from './Toolbar/Toolbar'
+import SideDrawer from './SideDrawer/SideDrawer'
+import Backdrop from './Backdrop/Backdrop'
 
 const AppView = styled.div`
-  // just need this for a short time, going to need to make the page scollable, each inv frame will probably be 100vh for ease
-  height: 100vh;
-  background-color: rgb(227, 147, 132);
+    height: 100%;
+    background-color: rgb(227, 147, 132);
 `
 const Header = styled.div`
     height: 10%;
     width: 100%;
-    // border-bottom: 2px solid red;
+    border-bottom: 2px solid white;
 
     display: flex;
     align-items: center;
@@ -24,18 +26,38 @@ const NameText = styled.h2`
     font-size: 25pt;
 `
 const ScrollContent = styled.div`
-  overflow-y: scroll;
+    overflow-y: scroll;
+    height: 90%;
 `
 
+
 function App() {
+
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false)
+
+  drawerToggleClickHandler = () => {
+    setSideDrawerOpen((prevState) => {
+      return {sideDrawerOpen : !prevState.sideDrawerOpen}
+    })
+  }
+  
+  backdropClickHandler = () => {
+    
+  }
+  
+
   return (
     <AppView>
-      <Header>
-        <NameText>Darius Raazi</NameText>
-      </Header>
-      {/* this is where all body wil go */}
+      {/* <Header> */}
+        {/* <NameText>Darius Raazi</NameText> */}
+        <Toolbar />
+        <SideDrawer />
+
+
+      {/* </Header> */}
+      {/* this is where all body wil go so it can scroll with a fixed header */}
       <ScrollContent>
-        <introPage />
+        <IntroPage />
       </ScrollContent>
     </AppView>
   );

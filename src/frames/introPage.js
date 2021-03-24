@@ -2,17 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const IntroContainer = styled.div`
-    height: 100vh;
+    height: 300vh;
     width: 100%;
+    background-color: green;
 
 `
 
-const introPage = () => {
+const IntroPage = () => {
     return(
         <IntroContainer>
-            
+            Hello world
         </IntroContainer>
     )
 }
 
-export default introPage;
+export default IntroPage;
